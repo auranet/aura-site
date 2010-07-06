@@ -1,0 +1,11 @@
+<show-page title="&name" without-parent-link without-creator-link>
+  <after-stylesheets:>
+      <theme-stylesheet name="emmett"/>
+  </after-stylesheets:>
+  <append-content-header:>
+    <entry-info/>
+  </append-content-header:>
+  <field-list: replace>
+    <view:body_html/>
+  </field-list:>
+</show-page>

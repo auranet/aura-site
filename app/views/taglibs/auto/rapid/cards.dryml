@@ -1,0 +1,88 @@
+<!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
+
+<def tag="card" for="Comment">
+  <card class="comment" param="default" merge>
+    <header: param>
+      <div param="actions">
+        <delete-button label="X" param/>
+      </div>
+    </header:>
+    <body: param>
+      <view:body param="description"/>
+      <a:user param="creator-link"/>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="Entry">
+  <card class="entry" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      <a:user param="creator-link"/>
+      <ht key="comments.collection.count" count="&this.comments.size">
+         <count:comments param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="MediaFile">
+  <card class="media-file" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Menu">
+  <card class="menu" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Page">
+  <card class="page" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Tag">
+  <card class="tag" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      <ht key="entries.collection.count" count="&this.entries.size">
+         <count:entries param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="TagAssignment">
+  <card class="tag-assignment" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="User">
+  <card class="user" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      <ht key="entries.collection.count" count="&this.entries.size">
+         <count:entries param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+

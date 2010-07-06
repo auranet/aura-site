@@ -1,0 +1,13 @@
+<index-page title="Blog">
+  <after-stylesheets:>
+      <theme-stylesheet name="emmett"/>
+  </after-stylesheets:>
+  <content: replace>
+    <div class="section-group">
+      <div class="section-group-inner">
+        <content: restore/>
+        <aside><tags-menu/></aside>
+      </div>
+    </div>
+  </content:>
+</index-page>

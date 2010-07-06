@@ -1,0 +1,33 @@
+<page title="Home">
+  <after-stylesheets:>
+      <theme-stylesheet name="emmett"/>
+  </after-stylesheets:>
+
+  <body: class="front-page"/>
+
+  <content: replace>
+    <section class="content" with-flash-messages>
+      <section class="content-body">
+        <do with="&Page.find_by_is_front_page(true)">
+          <a action="edit" if="&can_edit?">
+            <ht key="pages.actions.edit"
+              name="&this.respond_to?(:name) ? this.name : ''">
+              Edit Page
+            </ht>
+          </a>
+          <view:body_html/>
+        </do>
+        <else>
+          <% if User.count == 0 -%>
+            <h3 style="margin-top: 20px;">There are no user accounts - please provide the details of the site administrator</h3>
+            <do with="&User.new"><% this.exempt_from_edit_checks = true %>
+              <signup-form/>
+            </do>
+          <% else -%>
+            <h3 style="margin-top: 20px;">No entries published yet.</h3>
+          <% end -%>
+        </else>
+      </section>
+    </section>
+  </content:>
+</page>

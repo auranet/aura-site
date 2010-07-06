@@ -1,0 +1,27 @@
+<extend tag="card" for="Comment">
+  <old-card merge>
+    <body:>
+      <div>
+        On <view:created_at/>, <a:user/> said:
+      </div>
+      <view:body/>
+    </body:>
+  </old-card>
+</extend>
+
+<extend tag="card" for="Entry">
+  <old-card merge>
+    <prepend-body:>
+      <entry-info/>
+    </prepend-body:>
+    <creator-link: replace/>
+  </old-card>
+</extend>
+
+<extend tag="card" for="Tag">
+  <old-card merge>
+    <body:>
+      (<%= this.entries.size %>)
+    </body:>
+  </old-card>
+</extend>

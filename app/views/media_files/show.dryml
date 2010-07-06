@@ -1,0 +1,6 @@
+<show-page>
+  <before-field-list:>
+    <a href="#{this.public_filename}">Download File</a>
+  </before-field-list:>
+  <field-list: fields="content_type, filename, size, public_filename" />
+</show-page>

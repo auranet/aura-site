@@ -1,0 +1,52 @@
+<include src="rapid" plugin="hobo"/>
+
+<include src="taglibs/auto/rapid/cards"/>
+<include src="taglibs/auto/rapid/pages"/>
+<include src="taglibs/auto/rapid/forms"/>
+
+<include src="taglibs/emmett/cards"/>
+<include src="taglibs/emmett/forms"/>
+<include src="taglibs/emmett/tags"/>
+
+<set-theme name="aura"/>
+
+<def tag="app-name">
+  <%= image_tag "aura-logo.png", :alt => "Aura Software, LLC" %>
+</def>
+
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <% conditions = {:menu_id => nil} %>
+    <if test="&!current_user.administrator?">
+      <% conditions[:is_public] = true %>
+    </if>
+    <% top_level_menus = Menu.find(:all, :conditions => conditions) %>
+    <repeat with="&top_level_menus">
+      <%
+        url = this.url
+        if url.blank?
+          url = "#"
+        end
+      %>
+      <li>
+        <a href="#{url}"><%= this.name %></a>
+        <if test="&!this.menus.empty?">
+          <ul>
+            <repeat with="&this.menus">
+              <%
+                url = this.url
+                if url.blank?
+                  url = "#"
+                end
+              %>
+              <li>
+                <a href="#{url}"><%= this.name %></a>
+              </li>
+            </repeat>
+          </ul>
+        </if>
+      </li>
+    </repeat>
+  </navigation>
+  <div class="clear"></div>
+</def>

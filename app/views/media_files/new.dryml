@@ -1,0 +1,9 @@
+<%= error_messages_for :media_file %>
+
+<new-page>
+  <form: enctype="multipart/form-data">
+    <label>Choose File</label>
+    <input type="file" name="media_file[uploaded_data]"/>
+    <submit label="Upload File"/>
+  </form:>
+</new-page>

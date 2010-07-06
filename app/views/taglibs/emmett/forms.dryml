@@ -1,0 +1,11 @@
+<extend tag="form" for="Comment">
+  <old-form merge>
+    <field-list: fields="body" without-body-label/>
+  </old-form>
+</extend>
+
+<extend tag="form" for="Entry">
+  <old-form merge>
+    <field-list: fields="name, body_markdown, body_html, tagstring"/>
+  </old-form>
+</extend>

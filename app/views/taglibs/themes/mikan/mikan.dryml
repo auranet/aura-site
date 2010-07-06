@@ -1,0 +1,13 @@
+<extend tag="page">
+  <old-page merge>
+    <stylesheets: param>
+      <stylesheet name="reset"/>
+      <theme-stylesheet/>
+      <theme-stylesheet name="rapid-ui"/>
+      <stylesheet name="application" param="app-stylesheet"/>
+    </stylesheets:>
+    <append-head:>
+      <link href="/entries/rss" rel="alternate" title="RSS" type="application/rss+xml" />
+    </append-head:>
+  </old-page>
+</extend>

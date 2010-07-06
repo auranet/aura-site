@@ -1,0 +1,46 @@
+.entry p,
+.recent-entry p {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.recent-entry {
+    padding: 5px;
+    margin-bottom: 50px;
+}
+
+.recent-entry .header {
+    border-bottom: 1px dotted #888;
+    margin-bottom: 30px;
+}
+
+.tag div, .tag h4 { display: inline; }
+
+code .comment { color: #555; font-style: italic; }
+code .keyword { color: #00A; font-weight: bold; }
+code .method { color: #077; }
+code .class { color: #074; }
+code .module { color: #05A; }
+code .punct { color: #447; font-weight: bold; }
+code .symbol { color: #099; }
+code .string { color: #449; }
+code .char { color: #07F; }
+code .ident { color: #004; }
+code .constant { color: #07F; }
+code .regex { color: #66B; }
+code .number { color: #99F; }
+code .attribute { color: #7BB; }
+code .global { color: #F77; }
+code .expr { color: #227; }
+code .escape { color: #277; }
+
+pre {
+    background-color: whiteSmoke;
+    border: 1px dotted #E8E8E8;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    overflow: auto;
+    padding: 5px;
+    width: 650px;
+}
+

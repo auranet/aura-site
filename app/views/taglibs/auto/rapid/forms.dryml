@@ -1,0 +1,129 @@
+<!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
+
+<def tag="form" for="Comment">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="body, is_public, user_ip, entry, user" param/>
+    <div param="actions">
+      <submit label="#{ht 'comments.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Entry">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, body_markdown, body_html, tagstring, state, tags, user" param/>
+    <div param="actions">
+      <submit label="#{ht 'entries.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+<def tag="publish-form" polymorphic/>
+<def tag="publish-form" for="Entry">
+  <form lifecycle="publish" merge param="default">
+    <error-messages param/>
+    <input type="hidden" name="key" value="&this.lifecycle.provided_key" if="&this.lifecycle.provided_key"/>
+    <field-list fields="" param/>
+    <div param="actions">
+      <submit label="#{ht 'entries.actions.publish', :default=>['Publish']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+<def tag="unpublish-form" polymorphic/>
+<def tag="unpublish-form" for="Entry">
+  <form lifecycle="unpublish" merge param="default">
+    <error-messages param/>
+    <input type="hidden" name="key" value="&this.lifecycle.provided_key" if="&this.lifecycle.provided_key"/>
+    <field-list fields="" param/>
+    <div param="actions">
+      <submit label="#{ht 'entries.actions.unpublish', :default=>['Unpublish']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+<def tag="form" for="MediaFile">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="content_type, filename, size" param/>
+    <div param="actions">
+      <submit label="#{ht 'media_files.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Menu">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, url, is_public, order_number, menu" param/>
+    <div param="actions">
+      <submit label="#{ht 'menus.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Page">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, body_markdown, body_html, is_front_page" param/>
+    <div param="actions">
+      <submit label="#{ht 'pages.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Tag">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name" param/>
+    <div param="actions">
+      <submit label="#{ht 'tags.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="User">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, email_address, administrator, state" param/>
+    <div param="actions">
+      <submit label="#{ht 'users.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+<def tag="signup-form" polymorphic/>
+<def tag="signup-form" for="User">
+  <form lifecycle="signup" merge param="default">
+    <error-messages param/>
+    <field-list fields="name, email_address, password, password_confirmation" param/>
+    <div param="actions">
+      <submit label="#{ht 'users.actions.signup', :default=>['Signup']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+<def tag="reset-password-form" polymorphic/>
+<def tag="reset-password-form" for="User">
+  <form lifecycle="reset_password" merge param="default">
+    <error-messages param/>
+    <input type="hidden" name="key" value="&this.lifecycle.provided_key" if="&this.lifecycle.provided_key"/>
+    <field-list fields="password, password_confirmation" param/>
+    <div param="actions">
+      <submit label="#{ht 'users.actions.reset_password', :default=>['Reset Password']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+

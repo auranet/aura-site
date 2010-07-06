@@ -1,0 +1,16 @@
+<def tag="tags-menu">
+  <h2>Entries by Tag</h2>
+  <collection with="&Tag.with_tag_assignments()"/>
+</def>
+
+<def tag="entry-info">
+  <div>
+    <a action="edit" if="&can_edit?">[Edit]</a>
+    Posted by <a:user/> on <view:created-at/>
+  </div>
+  <div>
+    Tags: <view:tags/>
+  </div>
+  <transition-buttons/>
+</def>
+

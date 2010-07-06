@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  database: aura_site_development
+
+test:
+  adapter: postgresql
+  database: aura_site_test
+
+production:
+  adapter: postgresql
+  database: aura_site

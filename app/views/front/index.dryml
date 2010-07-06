@@ -9,13 +9,15 @@
     <section class="content" with-flash-messages>
       <section class="content-body">
         <do with="&Page.find_by_is_front_page(true)">
-          <a action="edit" if="&can_edit?">
-            <ht key="pages.actions.edit"
-              name="&this.respond_to?(:name) ? this.name : ''">
-              Edit Page
-            </ht>
-          </a>
-          <view:body_html/>
+          <if test="&this">
+            <a action="edit" if="&can_edit?">
+              <ht key="pages.actions.edit"
+                name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Page
+              </ht>
+            </a>
+            <view:body_html/>
+          </if>
         </do>
         <else>
           <% if User.count == 0 -%>

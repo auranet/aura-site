@@ -1,4 +1,16 @@
-html, body {color: #193440; background: #FF7A00; }
+html, body {color: #193440;}
+
+body {
+  background-attachment: fixed;
+  background-image: url('/images/circuits.png');
+  background-position: bottom left;
+  background-repeat: repeat-x;
+}
+
+body > .content.section.with-flash {
+  background-color: white;
+}
+
 .clear {
     clear: both;
 }
@@ -52,9 +64,6 @@ html, body {color: #193440; background: #FF7A00; }
 
 .page-header .navigation.main-nav li > ul a:hover {
   background: #133E7D;
-}
-.section.content {
-  background: #FCFFF5;
 }
 
 .button {color: white; background: #1C5EBD;}
@@ -177,7 +186,7 @@ form .actions input { margin: 0; }
 .page-header .navigation a:hover,
 .page-header h1 a,
 .page-header h1 a:hover
- {border: none; color: white; background: none;}
+ {border: none; background: none;}
 
 .page-header div.search {
  	float: right;
@@ -266,7 +275,7 @@ form .actions {margin: 30px 0; width: 100%; text-align: center;}
 /* styling of generic elements */
 .creator {font-weight: bold;}
 .card {
-  background: #FFE673;
+  background: #EEEEEE;
   overflow: hidden; _zoom: 1;
   margin: 10px 0;
   padding: 12px;

@@ -104,7 +104,6 @@ a:hover {
 	color: black;
 }
 
-em, strong { color: #A00;}
 h1 a, h2 a, h3 a {border: none; background: none;}
 
 pre, code {
@@ -139,7 +138,7 @@ form .actions input { margin: 0; }
 	margin: 0 40px 10px; padding: 10px 30px; border-width: 2px 0;
 	color: white;
 }
-.flash.notice {background: #FF7400;}
+.flash.notice {background: #1C5EBD;}
 .flash.error {background: #BC1C3D;}
 .section.with-flash { padding-top: 20px; }
 

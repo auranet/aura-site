@@ -21,7 +21,7 @@
 
 .tag div, .tag h4 { display: inline; }
 
-pre {
+blockquote, pre {
     background-color: #FED;
     margin-bottom: 5px;
     margin-top: 5px;

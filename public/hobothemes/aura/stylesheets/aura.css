@@ -11,6 +11,11 @@ body > .content.section.with-flash {
   background-color: white;
 }
 
+
+.accordion {
+    height: 320px;
+}
+
 .clear {
     clear: both;
 }

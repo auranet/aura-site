@@ -5,12 +5,15 @@
       <theme-stylesheet/>
       <theme-stylesheet name="rapid-ui"/>
       <stylesheet name="application" param="app-stylesheet"/>
+      <stylesheet name="jquery-ui"/>
     </stylesheets:>
     <after-scripts:>
       <javascript name="jquery-1.4.2.min.js"/>
+      <javascript name="jquery-ui.js"/>
       <javascript name="jquery.dropshadow.js"/>
       <javascript name="dropdown.js"/>
       <javascript name="add_shadows.js"/>
+      <javascript name="add_accordions.js"/>
     </after-scripts:>
     <append-head:>
       <link href="/entries/rss" rel="alternate" title="RSS" type="application/rss+xml" />

@@ -11,6 +11,8 @@ class Page < ActiveRecord::Base
     timestamps
   end
 
+  set_search_columns :name, :body_html
+
   def process_markdown
     if not self.body_markdown.blank?
       self.body_html = Maruku.new(self.body_markdown).to_html

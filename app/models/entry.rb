@@ -6,7 +6,7 @@ class Entry < ActiveRecord::Base
   fields do
     name          :string
     body_markdown :text
-    body_html     :html
+    body_html     :raw_html
     tagstring     :string
     timestamps
   end

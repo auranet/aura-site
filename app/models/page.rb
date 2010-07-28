@@ -6,7 +6,7 @@ class Page < ActiveRecord::Base
   fields do
     name          :string
     body_markdown :text
-    body_html     :html
+    body_html     :raw_html
     is_front_page :boolean
     timestamps
   end

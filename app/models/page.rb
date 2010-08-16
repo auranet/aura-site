@@ -1,7 +1,8 @@
 class Page < ActiveRecord::Base
   hobo_model # Don't put anything above this
 
-  before_save :process_markdown, :adjust_front_page
+  before_save :process_markdown
+  after_save :adjust_front_page
 
   fields do
     name          :string
@@ -20,8 +21,8 @@ class Page < ActiveRecord::Base
   end
 
   def adjust_front_page
-    if self.is_front_page
-      Page.update_all('is_front_page = true')
+    if is_front_page
+      Page.update_all('is_front_page = false', ["id != ?", id])
     end
   end
 

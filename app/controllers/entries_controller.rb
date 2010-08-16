@@ -32,4 +32,8 @@ class EntriesController < ApplicationController
     assign_tags
     hobo_update
   end
+
+  def markdown_preview
+    render :inline => Maruku.new(params['markdown']).to_html
+  end
 end

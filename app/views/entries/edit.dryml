@@ -1,0 +1,12 @@
+<edit-page>
+  <after-stylesheets:>
+      <theme-stylesheet name="emmett"/>
+  </after-stylesheets:>
+  <after-heading:>
+    <div id="content-preview"></div>
+  </after-heading:>
+  <after-delete-button:>
+    <%= button_to_function "Preview", "preview_markdown()",
+      :class => "button delete-button" %>
+  </after-delete-button:>
+</edit-page>

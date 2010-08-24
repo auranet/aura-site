@@ -7,7 +7,7 @@
   </prepend-content-body:>
   <after-delete-button:>
     <%= button_to_function "Preview",
-      "preview_markdown('entry_body_markdown', 'entry_body_html')",
+      "preview_markdown('page_body_markdown', 'page_body_html')",
       :class => "button delete-button" %>
   </after-delete-button:>
 </edit-page>

@@ -6,6 +6,21 @@
 
 <extend tag="form" for="Entry">
   <old-form merge>
+    <before-error-messages:>
+      <div param="actions">
+        <submit label="#{ht 'entries.actions.save', :default=>['Save']}"/><or-cancel param="cancel"/>
+      </div>
+    </before-error-messages:>
     <field-list: fields="name, body_markdown, body_html, tagstring"/>
+  </old-form>
+</extend>
+
+<extend tag="form" for="Page">
+  <old-form merge>
+    <before-error-messages:>
+      <div param="actions">
+        <submit label="#{ht 'pages.actions.save', :default=>['Save']}"/><or-cancel param="cancel"/>
+      </div>
+    </before-error-messages:>
   </old-form>
 </extend>

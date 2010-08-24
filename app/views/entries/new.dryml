@@ -1,4 +1,4 @@
-<edit-page>
+<new-page>
   <after-stylesheets:>
       <theme-stylesheet name="emmett"/>
   </after-stylesheets:>
@@ -6,8 +6,9 @@
     <%= button_to_function "Preview",
       "preview_markdown('entry_body_markdown', 'entry_body_html')",
       :class => "button preview-button" %>
+    <div class="clear"></div>
   </append-content-header:>
   <prepend-content-body:>
     <div id="content-preview"></div>
   </prepend-content-body:>
-</edit-page>
+</new-page>

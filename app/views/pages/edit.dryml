@@ -2,12 +2,12 @@
   <after-stylesheets:>
       <theme-stylesheet name="emmett"/>
   </after-stylesheets:>
+  <append-content-header:>
+    <%= button_to_function "Preview",
+      "preview_markdown('page_body_markdown', 'page_body_html')",
+      :class => "button preview-button" %>
+  </append-content-header:>
   <prepend-content-body:>
     <div id="content-preview"></div>
   </prepend-content-body:>
-  <after-delete-button:>
-    <%= button_to_function "Preview",
-      "preview_markdown('page_body_markdown', 'page_body_html')",
-      :class => "button delete-button" %>
-  </after-delete-button:>
 </edit-page>

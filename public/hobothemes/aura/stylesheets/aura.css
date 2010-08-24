@@ -257,7 +257,9 @@ form .actions input { margin: 0; }
 .edit-page .content-header {overflow: hidden; _zoom: 1;}
 .edit-page .content-header h1 {float: left;}
 .edit-page .content-header .delete-button {float: right; margin-top: 25px;}
-form .actions {margin: 30px 0; width: 100%; text-align: center;}
+.content-header .preview-button {float: right; margin-top: 25px;}
+
+form .actions {margin: 15px 0; width: 100%; text-align: right;}
 
 .show-page .content-header {position: relative; border-bottom: 1px dotted #888;;}
 .show-page .content-header h1, .new-in-collection-page .content-header h1 {margin-bottom: 2px; margin-right: 70px;}

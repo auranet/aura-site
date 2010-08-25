@@ -678,7 +678,7 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="body_markdown, body_html" param/>
+            <field-list fields="body_markdown, body_html, state" param/>
           </section>
     </content:>
 
@@ -710,6 +710,52 @@
 </def>
 
 
+
+<def tag="publish-page" polymorphic/>
+<def tag="publish-page" for="Page">
+  <page title="#{ht 'pages.publish.title', :default=>['Publish']}" merge>
+
+    <body: class="lifecycle-transition-page publish-page" param/>
+
+    <content:>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="pages.publish.heading">
+            Publish
+          </ht>
+        </h2>
+      </header>
+
+      <section param="content-body">
+        <publish-form param="form"/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+<def tag="unpublish-page" polymorphic/>
+<def tag="unpublish-page" for="Page">
+  <page title="#{ht 'pages.unpublish.title', :default=>['Unpublish']}" merge>
+
+    <body: class="lifecycle-transition-page unpublish-page" param/>
+
+    <content:>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="pages.unpublish.heading">
+            Unpublish
+          </ht>
+        </h2>
+      </header>
+
+      <section param="content-body">
+        <unpublish-form param="form"/>
+      </section>
+    </content:>
+
+  </page>
+</def>
 
 
 

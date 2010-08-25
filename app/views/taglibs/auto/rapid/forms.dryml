@@ -73,7 +73,7 @@
 <def tag="form" for="Page">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="name, body_markdown, body_html, is_front_page" param/>
+    <field-list fields="name, body_markdown, body_html, is_front_page, state" param/>
     <div param="actions">
       <submit label="#{ht 'pages.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
@@ -81,6 +81,28 @@
 </def>
 
 
+<def tag="publish-form" polymorphic/>
+<def tag="publish-form" for="Page">
+  <form lifecycle="publish" merge param="default">
+    <error-messages param/>
+    <input type="hidden" name="key" value="&this.lifecycle.provided_key" if="&this.lifecycle.provided_key"/>
+    <field-list fields="" param/>
+    <div param="actions">
+      <submit label="#{ht 'pages.actions.publish', :default=>['Publish']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+<def tag="unpublish-form" polymorphic/>
+<def tag="unpublish-form" for="Page">
+  <form lifecycle="unpublish" merge param="default">
+    <error-messages param/>
+    <input type="hidden" name="key" value="&this.lifecycle.provided_key" if="&this.lifecycle.provided_key"/>
+    <field-list fields="" param/>
+    <div param="actions">
+      <submit label="#{ht 'pages.actions.unpublish', :default=>['Unpublish']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
 
 <def tag="form" for="Tag">
   <form merge param="default">

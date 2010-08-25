@@ -9,6 +9,7 @@
         Edit Page
       </ht>
     </a>
+    <transition-buttons/>
     <view:body_html/>
   </field-list:>
 </show-page>

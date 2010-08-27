@@ -1,11 +1,13 @@
 class Page < ActiveRecord::Base
   hobo_model # Don't put anything above this
 
+  before_create :make_slug
   before_save :process_markdown
   after_save :adjust_front_page
 
   fields do
     name          :string
+    slug          :string, :unique
     body_markdown :text
     body_html     :raw_html
     is_front_page :boolean
@@ -35,6 +37,12 @@ class Page < ActiveRecord::Base
     User.find(:all, :conditions => {:administrator => true})
   end
 
+  def make_slug
+    if slug.blank?
+      self.slug = slugify(name)
+    end
+  end
+
   def process_markdown
     if not self.body_markdown.blank?
       self.body_html = Maruku.new(self.body_markdown).to_html
@@ -45,6 +53,12 @@ class Page < ActiveRecord::Base
     if is_front_page
       Page.update_all('is_front_page = false', ["id != ?", id])
     end
+  end
+
+  # Based on to_param of Hobo::Model
+  def slugify(s)
+    s.to_s.downcase.gsub(/[^a-z0-9]+/, '-').remove(/-+$/).remove(/^-+/) \
+      .split('-')[0..5].join('-')
   end
 
   # --- Permissions --- #

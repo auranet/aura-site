@@ -3,8 +3,11 @@ ActionController::Routing::Routes.draw do |map|
   map.site_search  'search', :controller => 'front', :action => 'search'
   map.root :controller => 'front', :action => 'index'
 
-  Hobo.add_routes(map)
+  # Route by page slug
+  map.connect 'pages/:slug', :controller => 'pages', :action => 'show',
+    :requirements => {:slug => /[a-z][a-z0-9_-]*/}
 
+  Hobo.add_routes(map)
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -23,7 +26,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route with sub-resources:
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-  
+
   # Sample resource route with more complex sub-resources
   #   map.resources :products do |products|
   #     products.resources :comments

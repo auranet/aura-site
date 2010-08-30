@@ -9,6 +9,7 @@
     </stylesheets:>
     <after-scripts:>
       <javascript name="jquery-1.4.2.min.js"/>
+      <javascript name="jquery-hoverIntent.js"/>
       <javascript name="jquery-ui.js"/>
       <javascript name="jquery.dropshadow.js"/>
       <javascript name="dropdown.js"/>

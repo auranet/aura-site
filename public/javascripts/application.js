@@ -23,4 +23,5 @@ preview_markdown = function (markdown_selector, html_selector) {
   else {
     $('content-preview').update($(html_selector).getValue());
   }
+  jQuery('.accordion').accordion({fillSpace: true});
 }

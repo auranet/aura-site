@@ -3,6 +3,8 @@ ActionController::Routing::Routes.draw do |map|
   map.site_search  'search', :controller => 'front', :action => 'search'
   map.root :controller => 'front', :action => 'index'
 
+  map.connect '/pages/new', :controller=>"pages", :action=>"new"
+
   # Route by page slug
   map.connect 'pages/:slug', :controller => 'pages', :action => 'show',
     :requirements => {:slug => /[a-z][a-z0-9_-]*/}

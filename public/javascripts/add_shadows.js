@@ -1,8 +1,12 @@
 function add_shadows() {
   var targets = [
     "div.card",
+    "#content-preview pre",
+    "#content-preview blockquote",
     ".entry-body-html pre",
-    ".entry-body-html blockquote"
+    ".entry-body-html blockquote",
+    ".page-body-html pre",
+    ".page-body-html blockquote"
   ];
   jQuery(targets.join(', ')).dropShadow({
     left: 4,

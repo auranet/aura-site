@@ -17,11 +17,13 @@ preview_markdown = function (markdown_selector, html_selector) {
       },
       onSuccess: function (transport) {
         $('content-preview').update(transport.responseText);
+        add_shadows();
       }
     });
   }
   else {
     $('content-preview').update($(html_selector).getValue());
+    setTimeout('add_shadows()', 100);
   }
   jQuery('.accordion').accordion({fillSpace: true});
 }

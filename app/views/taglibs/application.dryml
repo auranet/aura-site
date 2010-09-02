@@ -8,8 +8,6 @@
 <include src="taglibs/emmett/forms"/>
 <include src="taglibs/emmett/tags"/>
 
-<set-theme name="aura"/>
-
 <def tag="app-name">
   <%= image_tag "aura-logo.png", :alt => "Aura Software, LLC" %>
 </def>
@@ -50,3 +48,12 @@
   </navigation>
   <div class="clear"></div>
 </def>
+
+<include src="taglibs/local"/>
+
+<!--
+  set-theme is not a real dryml tag
+  first use wins, so leave at the bottom
+-->
+<set-theme name="aura"/>
+

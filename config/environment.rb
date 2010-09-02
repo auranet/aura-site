@@ -79,3 +79,26 @@ Rails::Initializer.run do |config|
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 end
+
+# Make dryml includes fail gracefully
+module Hobo::Dryml
+  DRYMLBuilder.class_eval do
+    def import_taglib(options)
+      # Now graceful with missing includes
+      if options[:module]
+        import_module(options[:module].constantize, options[:as])
+      else
+        template_dir = File.dirname(template_path)
+        options = options.merge(:template_dir => template_dir)
+
+        begin
+          taglib = Taglib.get(options)
+        rescue Hobo::Dryml::DrymlException
+          Rails.logger.info("  DRYML: Could not include #{options[:src]}.dryml")
+        else
+          taglib.import_into(@environment, options[:as])
+        end
+      end
+    end
+  end
+end

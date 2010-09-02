@@ -10,7 +10,7 @@
       </ht>
     </a>
     <transition-buttons/>
-    <h1><view:name/></h1>
+    <h1 unless="&this.is_front_page"><view:name/></h1>
     <view:body_html/>
   </field-list:>
 </show-page>

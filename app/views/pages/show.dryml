@@ -11,6 +11,14 @@
     </a>
     <transition-buttons/>
     <h1 unless="&this.is_front_page"><view:name/></h1>
-    <view:body_html/>
+    <if test="&this.is_erb">
+      <%=
+        t = ERB.new(this.body_html, 0, "%<>")
+        t.result(binding)
+      %>
+    </if>
+    <else>
+      <view:body_html/>
+    </else>
   </field-list:>
 </show-page>

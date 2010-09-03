@@ -73,7 +73,7 @@
 <def tag="form" for="Page">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="name, slug, body_markdown, body_html, is_front_page, state" param/>
+    <field-list fields="name, slug, body_markdown, body_html, is_front_page, is_erb, state" param/>
     <div param="actions">
       <submit label="#{ht 'pages.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>

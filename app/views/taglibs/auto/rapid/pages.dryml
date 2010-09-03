@@ -668,7 +668,7 @@
               </ht>
             </h2>
 
-            <record-flags fields="is_front_page" param/>
+            <record-flags fields="is_front_page, is_erb" param/>
 
             <a action="edit" if="&can_edit?" param="edit-link">
               <ht key="pages.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">

@@ -11,6 +11,7 @@ class Page < ActiveRecord::Base
     body_markdown :text
     body_html     :raw_html
     is_front_page :boolean
+    is_erb        :boolean, :default => false
     timestamps
   end
 

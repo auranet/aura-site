@@ -1,0 +1,43 @@
+<page title="Contact Us">
+  <content:>
+    <section class="content-header">
+      <h2>Contact Us</h2>
+    </section>
+    <section class="content-body" with-flash-messages>
+      <% form_tag do %>
+        <table class="field-list">
+          <tr>
+            <th>
+              Email Address
+            </th>
+            <td>
+              <%= text_field_tag 'email', @email %>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Message
+            </th>
+            <td>
+              <%= text_area_tag 'message', @msg %>
+            </td>
+          </tr>
+          <tr>
+            <th>
+            </th>
+            <td>
+              <%= recaptcha_tags %>
+            </td>
+          </tr>
+          <tr>
+            <th>
+            </th>
+            <td>
+              <submit label="Contact Us!"/>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    </section>
+  </content:>
+</page>

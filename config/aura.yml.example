@@ -1,0 +1,10 @@
+from_email: noreply@example.com
+contact_emails:
+  - admin@example.com
+recaptcha:
+  public_key: 'MyPubKey'
+  private_key: 'MyPrivateKey'
+rakismet:
+  key: 'MyAkismetKey'
+  url: 'http://www.example.com/'
+  host: 'rest.akismet.com'

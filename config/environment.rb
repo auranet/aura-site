@@ -16,6 +16,7 @@ Rails::Initializer.run do |config|
   config.gem 'rakismet'
   config.gem 'panztel-actionwebservice', :version => '2.3.5',
     :lib => 'actionwebservice', :source => 'http://gemcutter.org'
+  config.gem "ambethia-recaptcha", :lib => "recaptcha/rails", :source => "http://gems.github.com"
 
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers

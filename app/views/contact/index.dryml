@@ -3,7 +3,7 @@
     <section class="content-header">
       <h2>Contact Us</h2>
     </section>
-    <section class="content-body" with-flash-messages>
+    <section class="content-body">
       <% form_tag do %>
         <table class="field-list">
           <tr>

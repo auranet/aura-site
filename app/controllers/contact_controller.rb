@@ -13,7 +13,7 @@ class ContactController < ApplicationController
 
     if verify_recaptcha
       if email_is_valid
-        ContactMailer.deliver_mail(@email, @msg)
+        ContactMailer.deliver_email(@email, @msg)
         flash[:notice] = 'Thank you for contacting us!'
         # Clear form
         @email = nil

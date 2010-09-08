@@ -1,4 +1,8 @@
-config = YAML::load(File.open(File.join(RAILS_ROOT, 'config', 'aura.yml')))
+module Aura
+  CONFIG = YAML::load(File.open(File.join(RAILS_ROOT, 'config', 'aura.yml')))
+end
+
+config = Aura::CONFIG
 errors = []
 
 # Sanity checking!
@@ -36,4 +40,4 @@ ENV['RECAPTCHA_PRIVATE_KEY'] = config['recaptcha']['private_key']
 Rakismet::KEY = config['rakismet']['key']
 Rakismet::URL = config['rakismet']['url']
 Rakismet::HOST = config['rakismet']['url']
-Aura::CONFIG = config
+

@@ -104,6 +104,18 @@
   </form>
 </def>
 
+<def tag="form" for="RssEntryImport">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="url, publish_on_import, user" param/>
+    <div param="actions">
+      <submit label="#{ht 'rss_entry_imports.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
 <def tag="form" for="Tag">
   <form merge param="default">
     <error-messages param/>

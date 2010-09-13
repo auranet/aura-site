@@ -9,6 +9,7 @@
     <nav-item with="&MediaFile"><ht key="media_files.nav_item">Media Files</ht></nav-item>
     <nav-item with="&Menu"><ht key="menus.nav_item">Menus</ht></nav-item>
     <nav-item with="&Page"><ht key="pages.nav_item">Pages</ht></nav-item>
+    <nav-item with="&RssEntryImport"><ht key="rss_entry_imports.nav_item">Rss Entry Imports</ht></nav-item>
   </navigation>
 </def>
 
@@ -756,6 +757,126 @@
 
   </page>
 </def>
+
+
+
+<!-- ====== RssEntryImport Pages ====== -->
+
+<def tag="index-page" for="RssEntryImport">
+  <page merge title="#{ht 'rss_entry_imports.index.title', :default=>['Rss Entry Imports'] }">
+    <body: class="index-page rss-entry-import" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="rss_entry_imports.index.heading">
+            Rss Entry Imports
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="rss_entry_imports.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="rss_entry_imports.actions.new">New Rss Entry Import</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="RssEntryImport">
+  <page merge title="#{ht 'rss_entry_imports.new.title', :default=>[' New Rss Entry Import'] }">
+    <body: class="new-page rss-entry-import" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="rss_entry_imports.new.heading">
+            New Rss Entry Import
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'rss_entry_imports.actions.create', :default=>['Create Rss Entry Import']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="RssEntryImport">
+  <page merge title="#{ht 'rss_entry_imports.show.title', :default=>['Rss Entry Import'] }">
+
+    <body: class="show-page rss-entry-import" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="rss_entry_imports.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="publish_on_import" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="rss_entry_imports.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Rss Entry Import
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="url, user" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="RssEntryImport">
+  <page merge title="#{ht 'rss_entry_imports.edit.title', :default=>['Edit Rss Entry Import'] }">
+
+    <body: class="edit-page rss-entry-import" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="rss_entry_imports.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'rss_entry_imports.actions.delete', :default=>['Remove This Rss Entry Import']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
 
 
 

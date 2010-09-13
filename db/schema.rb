@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100907225606) do
+ActiveRecord::Schema.define(:version => 20100913171730) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -73,6 +73,16 @@ ActiveRecord::Schema.define(:version => 20100907225606) do
   end
 
   add_index "pages", ["state"], :name => "index_pages_on_state"
+
+  create_table "rss_entry_imports", :force => true do |t|
+    t.string   "url"
+    t.boolean  "publish_on_import"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "rss_entry_imports", ["user_id"], :name => "index_rss_entry_imports_on_user_id"
 
   create_table "tag_assignments", :force => true do |t|
     t.datetime "created_at"

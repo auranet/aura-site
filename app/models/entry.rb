@@ -51,6 +51,37 @@ class Entry < ActiveRecord::Base
     self.tags = new_tags
   end
 
+  # Parse an RSS and create an entry for each based on title
+  def self.from_rss(url, author, options={})
+    require 'rss'
+
+    defaults = {
+      :publish => true,
+    }
+    options = defaults.merge(options)
+    entries = []
+    rss = nil
+    open(url) do |stream|
+      rss = RSS::Parser.parse(stream.read, false)
+    end
+
+    rss.items.reverse.each do |item|
+      if not Entry.find_by_name(item.title)
+        entry = Entry.create!(
+          :name => item.title,
+          :body_html => item.description,
+          :tagstring => '',
+          :user => author
+        )
+        if options[:publish]
+          entry.lifecycle.publish! author
+        end
+        entries << entry
+      end
+    end
+    entries
+  end
+
   # --- Permissions --- #
 
   def create_permitted?

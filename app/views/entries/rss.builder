@@ -1,8 +1,8 @@
 xml.instruct! :xml, :version=>"1.0"
 xml.rss(:version=>"2.0"){
   xml.channel{
-    xml.title("Taming Hobo with Tyler Lesmann")
-    xml.link("http://hobo.tylerlesmann.com/")
+    xml.title("Aura Blog")
+    xml.link("http://www.aura-software.com/")
     xml.description("Newest entries")
     xml.language('en-us')
       for entry in @entries

@@ -1,4 +1,11 @@
 <page title="Home">
+  <append-head:>
+    <do with="&Page.find_by_is_front_page(true)">
+      <meta name="keywords" content="#{this.keywords}" unless="&this.keywords.blank?"/>
+      <meta name="description" content="#{this.description}" unless="&this.description.blank?"/>
+    </do>
+  </append-head:>
+
   <after-stylesheets:>
       <theme-stylesheet name="emmett"/>
   </after-stylesheets:>

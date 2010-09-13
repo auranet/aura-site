@@ -679,7 +679,8 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="slug, body_markdown, body_html, state" param/>
+            <view:description param="description"/>
+            <field-list fields="slug, body_markdown, body_html, page_title, keywords, state" param/>
           </section>
     </content:>
 

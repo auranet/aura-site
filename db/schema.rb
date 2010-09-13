@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100913171730) do
+ActiveRecord::Schema.define(:version => 20100913183107) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -70,6 +70,9 @@ ActiveRecord::Schema.define(:version => 20100913171730) do
     t.datetime "key_timestamp"
     t.string   "slug"
     t.boolean  "is_erb",        :default => false
+    t.string   "page_title"
+    t.string   "keywords"
+    t.text     "description"
   end
 
   add_index "pages", ["state"], :name => "index_pages_on_state"

@@ -1,4 +1,8 @@
-<show-page title="&name" without-content-header>
+<show-page title="#{this.page_title or this.name}" without-content-header>
+  <append-head:>
+    <meta name="keywords" content="#{this.keywords}" unless="&this.keywords.blank?"/>
+    <meta name="description" content="#{this.description}" unless="&this.description.blank?"/>
+  </append-head:>
   <after-stylesheets:>
       <theme-stylesheet name="emmett"/>
   </after-stylesheets:>

@@ -12,6 +12,9 @@ class Page < ActiveRecord::Base
     body_html     :raw_html
     is_front_page :boolean
     is_erb        :boolean, :default => false
+    page_title    :string
+    keywords      :string
+    description   :text
     timestamps
   end
 

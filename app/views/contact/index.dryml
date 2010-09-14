@@ -1,7 +1,18 @@
 <page title="Contact Us">
+  <after-stylesheets:>
+      <theme-stylesheet name="emmett"/>
+  </after-stylesheets:>
   <content:>
+    <do with="&@contact_page" if="&@contact_page">
+      <section class="content-header">
+        <h2><view:name/></h2>
+      </section>
+      <section class="content-body">
+        <view:body_html/>
+      </section>
+    </do>
     <section class="content-header">
-      <h2>Contact Us</h2>
+      <h2>Email Us</h2>
     </section>
     <section class="content-body">
       <% form_tag do %>

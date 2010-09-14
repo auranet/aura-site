@@ -3,6 +3,7 @@ class ContactController < ApplicationController
   hobo_controller
 
   def index
+    @contact_page = Page.find_by_slug('contact')
     @email = params['email']
     @msg =  params['message']
     if @email

@@ -70,7 +70,7 @@ class Entry < ActiveRecord::Base
         entry = Entry.create!(
           :name => item.title,
           :body_html => item.description,
-          :tagstring => '',
+          :tagstring => item.categories.collect{|c| c.content}.join(', '),
           :user => author
         )
         if options[:publish]

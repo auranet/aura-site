@@ -37,7 +37,7 @@ body > .content.section.with-flash {
 .page-header .navigation.main-nav > li {
   margin: 0;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .page-header .navigation.main-nav li > ul {
@@ -49,7 +49,7 @@ body > .content.section.with-flash {
   margin: 0;
   position: absolute;
   top: 30px;
-  z-index: 2;
+  z-index: 4;
   padding-bottom: 10px;
   min-width: 100px;
   -moz-border-radius-bottomleft: 10px;

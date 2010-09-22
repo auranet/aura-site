@@ -69,7 +69,7 @@ class Entry < ActiveRecord::Base
       if not Entry.find_by_name(item.title)
         entry = Entry.create!(
           :name => item.title,
-          :body_html => item.description,
+          :body_html => item.content_encoded or item.description,
           :tagstring => item.categories.collect{|c| c.content}.join(', '),
           :user => author
         )

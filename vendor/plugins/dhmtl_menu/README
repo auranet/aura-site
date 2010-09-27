@@ -1,0 +1,34 @@
+DhtmlMenu
+=========
+
+Simple DHTML menus anywhere on your page you want.
+
+http://meteor_catalog.aura-software.com/widgets/4-dhmtl-menu
+
+Installation
+============
+
+Install Meteor! :
+http://www.aura-software.com/entries/5-how-to-install-meteor
+
+Install the DHMTL Menu plugin
+script/plugin install git@github.com:bretweinraub/dhmtl_menu.git
+
+See the example below.
+
+Example
+=======
+
+
+
+Give me a mouse-over pulldown with 3 entries:
+
+<%= render_meteor_widget(::Meteor::Widget::DhtmlMenu::Spec.new(:name => "Objects",
+                                                               :menu_items => [
+                                                                               ["Genres","/genres"],
+                                                                               ["Books","/books"],
+                                                                               ["Authors","/authors"],
+                                                                              ])) %>
+
+
+Copyright (c) 2010 Aura Software LLC, released under the MIT license

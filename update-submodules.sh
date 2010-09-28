@@ -253,7 +253,7 @@ for submodule in meteor; do
     docmd cd $submodule_path
     docmd git pull origin master
     docmd cd ../../..
-    docmd git commit $submodule_path
+    docmd git commit -m \'"updating $submodule in application aura-site"\' $submodule_path
     status
     docmd git push origin master
 done

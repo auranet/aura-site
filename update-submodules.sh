@@ -213,17 +213,18 @@ unset QUIET
 
 usage () {
   printmsg  I am unhappy ...... a usage message follows for your benefit
-  printmsg  Usage is 
+  printmsg  Usage is -s {submodule} 
 
-printmsg command can be run with no arguments if one choses
+printmsg  Required variables: submodule 
 
 
   cleanup 1
 } 
 
 OPTIND=0
-while getopts : c 
+while getopts :s: c 
     do case $c in        
+	s) export submodule=$OPTARG;;
 	:) printmsg $OPTARG requires a value
 	   usage;;
 	\?) printmsg unknown option $OPTARG
@@ -234,6 +235,12 @@ done
 
 
 
+
+
+test -z "${submodule}" && {
+	printmsg missing value for submodule
+	usage
+}
 
 
 
@@ -248,15 +255,17 @@ status () {
 
 status
 
-for submodule in meteor; do
+app=$(basename $(dirname `pwd`))
+
+#for submodule in meteor; do
     submodule_path=vendor/plugins/$submodule
     docmd cd $submodule_path
     docmd git pull origin master
     docmd cd ../../..
-    docmd git commit -m \'"updating $submodule in application aura-site"\' $submodule_path
+    docmd git commit -m \'"updating $submodule in application $app"\' $submodule_path
     status
     docmd git push origin master
-done
+#done
 
 cleanup 0
 

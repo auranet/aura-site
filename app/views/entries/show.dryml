@@ -8,4 +8,5 @@
   <field-list: replace>
     <view:body_html/>
   </field-list:>
+  <append-footer:>Last modified: <view:updated_at/></append-footer:>
 </show-page>

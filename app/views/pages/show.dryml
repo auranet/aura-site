@@ -25,4 +25,5 @@
       <view:body_html/>
     </else>
   </field-list:>
+  <append-footer:>Last modified: <view:updated_at/></append-footer:>
 </show-page>

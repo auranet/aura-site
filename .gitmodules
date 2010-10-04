@@ -3,4 +3,4 @@
 	url = git://github.com/bretweinraub/meteor.git
 [submodule "vendor/plugins/dhtml_menu"]
 	path = vendor/plugins/dhtml_menu
-	url = git@github.com:bretweinraub/dhtml_menu.git
+	url = git://github.com/bretweinraub/dhtml_menu.git

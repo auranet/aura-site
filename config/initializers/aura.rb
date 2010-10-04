@@ -39,5 +39,4 @@ ENV['RECAPTCHA_PUBLIC_KEY'] = config['recaptcha']['public_key']
 ENV['RECAPTCHA_PRIVATE_KEY'] = config['recaptcha']['private_key']
 Rakismet::KEY = config['rakismet']['key']
 Rakismet::URL = config['rakismet']['url']
-Rakismet::HOST = config['rakismet']['url']
-
+Rakismet::HOST = config['rakismet']['host']

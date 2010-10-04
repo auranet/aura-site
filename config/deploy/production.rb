@@ -10,7 +10,11 @@ namespace :aura do
   task :link_media_files do
     run "ln -sf #{shared_path}/media_files #{release_path}/public/media_files"
   end
+  task :link_local_dryml do
+    run "ln -sf #{shared_path}/local.dryml #{release_path}/app/views/taglibs/local.dryml"
+  end
 end
 
 after "deploy:finalize_update", "aura:link_config"
 after "deploy:finalize_update", "aura:link_media_files"
+after "deploy:finalize_update", "aura:link_local_dryml"

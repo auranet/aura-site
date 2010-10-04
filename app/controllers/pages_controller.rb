@@ -10,8 +10,14 @@ class PagesController < ApplicationController
 
   def show
     if params[:id].nil? and params[:slug]
-      params[:id] = model.find_by_slug(params[:slug], :select => :id)
+      page = model.find_by_slug(params[:slug])
+    else
+      page = model.find_by_id(params[:id].to_i)
     end
-    hobo_show
+
+    if page
+      fresh_when :etag => page, :last_modified => page.updated_at
+    end
+    hobo_show page
   end
 end

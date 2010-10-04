@@ -19,7 +19,7 @@
       <section class="section-group-inner">
         <section class="content" with-flash-messages>
           <section class="content-body">
-            <do with="&Page.find_by_is_front_page(true)">
+            <do with="&@page">
               <if test="&this">
                 <a action="edit" if="&can_edit?">
                   <ht key="pages.actions.edit"

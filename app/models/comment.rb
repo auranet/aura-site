@@ -22,7 +22,7 @@ class Comment < ActiveRecord::Base
                  :content => :body
 
   def check_for_spam
-    self.is_public = !self.spam?
+    #self.is_public = !self.spam?
     true
   end
 

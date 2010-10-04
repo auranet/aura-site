@@ -4,6 +4,7 @@ class EntriesController < ApplicationController
 
   auto_actions :all
   index_action :rss
+  index_action :news
 
   def assign_tags
     params["entry"]["tags"] = params["entry"]["tagstring"].split(',').collect{
@@ -22,6 +23,10 @@ class EntriesController < ApplicationController
     params["entry"].delete("user_id")
     assign_tags
     hobo_create
+  end
+
+  def news
+    hobo_index Entry.viewable(current_user).news
   end
 
   def rss

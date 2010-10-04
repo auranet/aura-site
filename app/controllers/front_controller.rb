@@ -2,7 +2,9 @@ class FrontController < ApplicationController
 
   hobo_controller
 
-  def index; end
+  def index
+    @news = Entry.viewable(current_user).news.all(:limit => 10)
+  end
 
   def summary
     if !current_user.administrator?

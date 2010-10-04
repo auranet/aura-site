@@ -24,6 +24,19 @@ class Entry < ActiveRecord::Base
       "#{acting_user.administrator? ? 1 : 0}=1 OR state='published'"
   }}
 
+  named_scope :news, lambda {
+    bad_ids = Entry.not_news.all(:select => 'entries.id').collect{|e| e.id}
+    {
+      :conditions => ['entries.id NOT IN (?)', bad_ids],
+      :order => 'entries.updated_at DESC',
+    }
+  }
+
+  named_scope :not_news, {
+    :joins => :tags,
+    :conditions => ['tags.name = ?', 'not-news'],
+    :order => 'entries.updated_at DESC',
+  }
 
   lifecycle do
     state :drafted, :default => true

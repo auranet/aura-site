@@ -7,6 +7,10 @@ namespace :aura do
   task :link_config do
     run "ln -sf #{shared_path}/config/aura.yml #{release_path}/config/aura.yml"
   end
+  task :link_media_files do
+    run "ln -sf #{shared_path}/media_files #{release_path}/public/media_files"
+  end
 end
 
 after "deploy:finalize_update", "aura:link_config"
+after "deploy:finalize_update", "aura:link_media_files"

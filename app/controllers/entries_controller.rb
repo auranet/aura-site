@@ -33,15 +33,6 @@ class EntriesController < ApplicationController
     @entries = Entry.find(:all, :conditions => {:state => 'published'}, :limit => 10)
   end
 
-  def show
-    entry = model.find_by_id(params[:id].to_i)
-
-    if entry
-      fresh_when :etag => entry, :last_modified => entry.updated_at
-    end
-    hobo_show entry
-  end
-
   def update
     assign_tags
     hobo_update

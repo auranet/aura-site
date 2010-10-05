@@ -14,8 +14,6 @@ class FrontController < ApplicationController
     elsif !@news.empty?
       mdate = @news[0].updated_at
     end
-
-    fresh_when :etag => [@page, @news], :last_modified => mdate
   end
 
   def summary

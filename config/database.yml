@@ -2,10 +2,13 @@ development:
   adapter: postgresql
   database: aura_site_development
 
-test:
+test: &test
   adapter: postgresql
   database: aura_site_test
 
 production:
   adapter: postgresql
   database: aura_site
+
+cucumber:
+  <<: *test

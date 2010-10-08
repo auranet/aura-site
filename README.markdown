@@ -8,7 +8,6 @@ Installing
     $ gem install rails -v 2.3.5
     $ gem install hobo hobosupport hobofields will_paginate --ignore-dependencies # Hobo will install rails 3 otherwise
     $ rake gems:install
-    $ gem list should look like the following:
     $ gem list
 
     *** LOCAL GEMS ***

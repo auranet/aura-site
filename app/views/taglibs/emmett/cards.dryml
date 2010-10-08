@@ -21,7 +21,7 @@
 <extend tag="card" for="Tag">
   <old-card merge>
     <body:>
-      (<%= this.entries.size %>)
+      (<%= this.entries.viewable(current_user).count %>)
     </body:>
   </old-card>
 </extend>

@@ -3,8 +3,16 @@ class FrontController < ApplicationController
   hobo_controller
 
   def index
-    @page = Page.find_by_is_front_page(true)
+    @page = Page.viewable(current_user).find_by_is_front_page(true)
     @news = Entry.viewable(current_user).news.all(:limit => 10)
+    @title = "Home"
+    if @page
+      if !@page.page_title.blank?
+        @title = @page.page_title
+      else
+        @title = @page.name
+      end
+    end
 
     mdate = nil
     if @page and !@news.empty?

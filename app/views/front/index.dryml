@@ -1,4 +1,4 @@
-<page title="Home">
+<page title="#{@title}">
   <append-head:>
     <do with="&Page.find_by_is_front_page(true)">
       <if test="&this">

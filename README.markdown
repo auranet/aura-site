@@ -1,14 +1,12 @@
 Thin CMS/Blogging site built using Hobo.  Many things you need, quite possibly nothing you don't.
 
-Note: The first user to sign up is made an admin.
-
 Installing
 ----------
 
-    $ git clone  git://github.com/auranet/aura-site.git
+    $ git clone git://github.com/auranet/aura-site.git
     $ gem install pg
     $ gem install rails -v 2.3.5
-    $ gem install hobo hobosupport hobofields will_paginate --ignore-dependencies # Hobo will install rails3 otherwise
+    $ gem install hobo hobosupport hobofields will_paginate --ignore-dependencies # Hobo will install rails 3 otherwise
     $ rake gems:install
     $ gem list should look like the following:
     $ gem list
@@ -36,6 +34,14 @@ Installing
 
     $ cp config/aura.yml.example config/aura.yml # edit this new file to meet your needs
     $ rake db:migrate
+
+Getting Started
+---------------
+
+1. ./script/server
+2. Open a browser and go to http://localhost:8000/
+3. You will be prompted to sign up.  This first user will be made an administrator.
+4. Content is managed through the *Admin* menu.
 
 Customizing
 -----------

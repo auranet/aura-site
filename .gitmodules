@@ -4,3 +4,6 @@
 [submodule "vendor/plugins/dhtml_menu"]
 	path = vendor/plugins/dhtml_menu
 	url = git://github.com/bretweinraub/dhtml_menu.git
+[submodule "vendor/rails"]
+	path = vendor/rails
+	url = git://github.com/rails/rails.git
